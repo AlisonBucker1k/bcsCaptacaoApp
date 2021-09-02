@@ -1,14 +1,21 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import preload from '../screens/preload';
-import login from '../screens/login';
+import Preload from '../screens/preload';
+import Login from '../screens/login';
+import DashBoard from '../screens/dashBoard';
 
 const Stack = createStackNavigator();
 
-export default () => {
-    <Stack.Navigator>
-        <Stack.Screen name="preload" component={preload} />
-        <Stack.Screen name="login" component={login} />
+export default() => (
+    <Stack.Navigator
+    initialRouteName="Preload"
+        screenOptions={{
+            headerShown:false
+        }}
+    >
+        <Stack.Screen name="Preload" component={Preload}/>
+        <Stack.Screen name="Login" component={Login}/>
+        <Stack.Screen name="DashBoard" component={DashBoard}/>
     </Stack.Navigator>
-}
+);

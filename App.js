@@ -1,12 +1,20 @@
 import React from 'react';
+import { StatusBar } from 'expo-status-bar';
 import { NavigationContainer } from '@react-navigation/native';
-
-import MainStack from './src/stacks/MainStack'
+import UserContextProvider from './src/contexts/UserContext'
+import MainStack from './src/stacks/MainStack';
 
 export default () => {
-  return (
-    <NavigationContainer>
-      <MainStack />
-    </NavigationContainer>
-  );
+return (
+    <UserContextProvider>
+        <NavigationContainer>
+            <StatusBar
+            animated={true}
+            backgroundColor="#29235c"
+            hidden={false} />
+
+            <MainStack />
+        </NavigationContainer>
+    </UserContextProvider>
+);
 }
